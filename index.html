@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="shortcut icon"
+    href="./images/Orkut_Logo_2.png"
+    type="image/x-icon"
+  />
+    <title>OrkutFólio</title>
+  </head>
+  <body>
+    <header>
+
+      <!----------- NAVBAR ----------->
+      <!-- Navbar section: Contains the navigation bar with logo, links, and search input -->
+
+      <nav>
+        <div>
+            <img class="logo" src="images/orkut-logo.png"/>
+          <p><a href="#">Início</a></p>
+          <p><a href="mailto:jhonnatanluiz@yahoo.com.br">Página de recados</a></p>
+        </div>
+        <div class="nav-div">
+          <p><strong>jhonnatanluiz@yahoo.com.br</strong></p>
+          <p id="sair">Sair</p>
+          <div class="input">
+            <input id="input" placeholder="pesquisa do OrkutFólio">
+            <a id="input-link" target="_blank" href="http://google.com.br/"><img class="lupa" src="images/lupa.png"/></a>
+        </div>
+     
+        </div>
+      </nav>
+    </header>
+    <main>
+
+      <!-------- PROFILE ----------->
+      <!-- Profile section: Displays user profile picture, name, and tags -->
+
+      <section class="profile">
+        <img src="images/photo_2025-06-05_13-55-07.jpg" />
+        <p class="blue">Jhonnatan Luiz</p>
+
+        <small>ele/dele, Em busca de um emprego, Mogi das Cruzes. Brasil</small>
+        <hr />
+        <a target="_blank" href="https://www.linkedin.com/in/jhonnatanluiz/"> <p class="blue">🙍 + amigo</p></a>
+        <a target="_blank" href="https://github.com/JhonnatanLuiz"><p class="blue">mais ›</p></a>
+        <hr />
+        <div class="profile-tags">
+          <p>🙍 perfil</p>
+          <a href="mailto:jhonnatanluiz@yahoo.com.br"><p>📝 recados</p></a>
+          <p id="profile-fotos">📷 fotos</p>
+          <p id="profile-videos">📹 videos</p>
+          <p id="profile-depo">🌞 depoimentos</p>
+        </div>
+      </section>
+
+      <!------------- ABOUT --------------->
+      <!-- About section: Contains user details like relationship, birthday, skills, etc. -->
+
+      <section class="about">
+        <h3>Jhonnatan Luiz</h3>
+        <hr />
+        <div class="about-items">
+          <a href="mailto:jhonnatanluiz@yahoo.com.br">
+               <div id="recados" class="items">
+            <p><small>recados</small></p>
+            <p>📝 0</p>
+          </a>
+        </div>
+        <div id="aboutFotos" class="items">
+          <p><small>fotos</small></p>
+          <p>📷 0</p>
+      </div>
+      <div id="aboutVideos" class="items">
+        <p><small>videos</small></p>
+        <p>📹 0</p>
+    </div>
+    <div id="fas" class="items">
+      <p><small>fãs</small></p>
+      <p id="stars">⭐ 0</p>
+  </div>
+  <div id="items">
+        <div class="items">
+            <p><small>confiável</small></p>
+            <p>🙂🙂🙂</p>
+        </div>
+        <div class="items">
+            <p><small>legal</small></p>
+            <p>🟦🟦🟦</p>
+        </div>
+        <div class="items">
+            <p><small>justo e paciente</small></p>
+            <p>💗💗💗</p>
+        </div>
+      </div>
+    </div>
+        <hr />
+        <p><strong>social</strong></p>
+        <hr class="darker" />
+        <div class="dark-light-info">
+          <div class="dark-blue">
+            <p class="grey">relacionamento:</p>
+            <p>em um relacionamento sério com o estudo</p>
+          </div>
+          <div class="light-blue">
+            <p class="grey">aniversário:</p>
+            <p>08 de Abril</p>
+          </div>
+          <div class="dark-blue">
+            <p class="grey">idade:</p>
+            <p><span class="line-through">23 anos</span> 39 anos</p>
+          </div>
+          <div class="light-blue">
+            <p class="grey">interesses:</p>
+            <p>vagas para front-end junior, entrevistas de emprego, carteira assinada e barões da pisadinha </p>
+          </div>
+          <div class="dark-blue">
+            <p class="grey">habilidades:</p>
+            <p>JavaScript, ReactJS, HTML, CSS, Python e Whey Protein</p>
+          </div>
+          <div class="light-blue">
+            <p class="grey">humor:</p>
+            <p>sim</p>
+          </div>
+          <div class="dark-blue">
+            <p class="grey">animais de estimação:</p>
+            <p>um cadelão chamado Thor</p>
+          </div>
+          <div class="light-blue">
+            <p class="grey">cidade natal:</p>
+            <p>São Paulo</p>
+          </div>
+          <div class="dark-blue">
+            <p class="grey">página web:</p>
+            <a target="_blank" href="https://www.linkedin.com/in/jhonnatanluiz/"
+              >linkedin.com/in/jhonnatanluiz</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Photos section: Placeholder for recent photos -->
+
+      <section class="fotos">
+        <h4><p id="fotos-seta" class="right">▼</p> fotos recentes dele <a href="#"> (0)</a></h4>
+        <hr>
+        <div>📷<a href="#"  id="ver-fotos">ver todas</a></div>
+      </section>
+
+      <!-- Videos section: Placeholder for recent videos -->
+
+      <section class="videos">
+        <h4><p id="videos-seta" class="right">▼</p> videos recentes dele <a href="#"> (0)</a></h4>
+        <hr>
+        <div>📹<a href="#"  id="ver-videos"> ver todos</a></div>
+      </section>
+
+      <!-- Testimonials section: Placeholder for user testimonials -->
+
+      <section class="depoimentos">
+        <h4><p id="depos-seta" class="right">▼</p> depoimentos dele <a href="#" id="count-depoimentos"> (0)</a></h4>
+        <hr>
+        <div class="section-content-toggleable" id="depoimentos-content">
+            <ul id="lista-depoimentos">
+                <!-- Depoimentos serão adicionados aqui pelo JS -->
+            </ul>
+            <button id="escrever-depoimento-btn" style="margin-top:10px;">Deixar um depoimento</button>
+        </div>
+        <div><a href="#" id="ver-depos">ver/escrever depoimentos</a></div> <!-- Seu botão atual pode acionar o toggle e a carga inicial -->
+    </section>
+
+      <!---------- PROJETOS ---------------->
+      <!-- Projects section: Displays a grid of user projects with links -->
+
+      <section class="projects">
+        <h4>projetos</h4>
+        <div class="the-projects">
+        <div class="project">
+          <img src="images/unnamed.webp" />
+          <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-rede-social-johnny-bravo.git"><p>Rede social do Johnny Bravo</p></a>
+        </div>
+        
+        <div class="project">
+          <img src="images/Jogo-da-Memoria-1.webp" />
+          <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-jogo-da-memoria"><p>Jogo da memória</p></a>
+        </div>
+        <div class="project">
+          <img src="images/71phF79EFpL.jpg" />
+          <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-calculadora"><p>Calculadora</p></a>
+        </div>
+        <div class="project">
+            <img src="images/e-commerce-e1487081160543.jpg" />
+            <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-e-commerce"><p>E-Commerce ☜═㋡ᔭ</p></a>
+          </div>
+          <div class="project">
+            <img src="images/quiz.png" />
+            <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-quiz"><p>Quiz</p></a>
+          </div>
+          <div class="project">
+            <img src="images/FocusArea__Weather-02.jpg" />
+            <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-weather-app"><p>Weather</p></a>
+   </div>
+   <a class="ver-todos" target="_blank" href="https://github.com/JhonnatanLuiz"><p>ver todos</p></a>
+        </div>
+
+        <!----------------- COMUNIDADES ---------------->
+        <!-- Communities section: Displays a grid of user communities with links -->
+
+      </section>
+      <section class="communities">
+        <h4>comunidades</h4>
+         <div class="the-communities">
+          <div class="community">
+            <img src="images/internet.jpg" />
+            <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>Eu já entrei na internet</p></a>
+          </div>
+          <div class="community">
+            <img src="images/forninho.jpg" />
+            <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>O universo é um grande forninho</p></a>
+          </div>
+     <div class="community">
+      <img src="images/metido.jpg" />
+      <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>Pareço metido(a) mas sou legal</p></a>
+    </div>
+    <a class="ver-mais" target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>ver mais</p></a>
+  
+     </div> 
+      </section>
+    </main>
+
+    <!------------------ LEGENDAS --------------------->
+
+    <div id="legendaID" class="legenda-none">
+      <div class="inner">
+      <h5>legenda</h5>
+      <div>
+        <p>⭐ sou fã</p>
+      </div>
+      <div>
+        <p>🙂⚪⚪ confiável</p>
+        <p>🙂🙂⚪ muito confiável</p>
+        <p>🙂🙂🙂 super confiável</p>
+      </div>
+      <div>
+        <p>🟦⬜⬜ legal</p>
+        <p>🟦🟦⬜ muito legal</p>
+        <p>🟦🟦🟦 super legal</p>
+      </div>
+      <div>
+        <p>💗🤍🤍 justo e paciente</p>
+        <p>💗💗🤍 muito justo e paciente</p>
+        <p>💗💗💗 super justo e paciente</p>
+      </div>
+    </div>
+    </div>
+
+    <!------------- POPUPS -------------->
+    <!-- Popups: Contains popup messages for photos, videos, testimonials, and logout -->
+    
+    <div class="fotos-popup" id="fotosPopup">
+      <p>Nenhuma foto disponível.</p>
+    </div>
+    <div class="videos-popup" id="videosPopup">
+      <p>Nenhum video disponível.</p>
+    </div>
+    <div class="depo-popup" id="depoPopup">
+      <p>Nenhum depoimento por aqui 😔</p>
+    </div>
+    <div class="bolo-popup" id="boloPopup">
+      <p>Fica, vai ter bolo 🎂</p>
+    </div>
+    <script type="text/javascript" src="./index.js"></script>
+  </body>
+</html>
