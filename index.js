@@ -178,11 +178,16 @@ if (verDeposLink && depoimentosContent) {
         event.preventDefault(); // Previne comportamento de link
 
         // Toggle da seta (se estiver associado)
-        if (deposSeta && deposSeta.getAttribute("class") === "right") {
-            deposSeta.setAttribute("class", "bottom");
-        } else if (deposSeta) {
-            deposSeta.setAttribute("class", "right");
+        if (deposSeta) {
+            if (deposSeta.classList.contains('right')) {
+                deposSeta.classList.remove('right');
+                deposSeta.classList.add('bottom');
+            } else {
+                deposSeta.classList.remove('bottom');
+                deposSeta.classList.add('right');
+            }
         }
+        
         // Toggle do conteúdo da seção de depoimentos
         depoimentosContent.classList.toggle("visible");
 

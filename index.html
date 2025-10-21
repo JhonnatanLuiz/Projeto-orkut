@@ -1,276 +1,502 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link
-    rel="shortcut icon"
-    href="./images/Orkut_Logo_2.png"
-    type="image/x-icon"
-  />
-    <title>OrkutFólio</title>
+    <link rel="shortcut icon" href="./images/Orkut_Logo_2.png" type="image/x-icon" />
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              orkut: {
+                blue: '#5E82BD',
+                darkblue: '#2E4C7D',
+                lightblue: '#D9E6F7',
+                pink: '#ED4791'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <title>OrkutFólio | Jhonnatan Luiz</title>
   </head>
-  <body>
-    <header>
-
-      <!----------- NAVBAR ----------->
-      <!-- Navbar section: Contains the navigation bar with logo, links, and search input -->
-
-      <nav>
-        <div>
-            <img class="logo" src="images/orkut-logo.png"/>
-          <p><a href="#">Início</a></p>
-          <p><a href="mailto:jhonnatanluiz@yahoo.com.br">Página de recados</a></p>
-        </div>
-        <div class="nav-div">
-          <p><strong>jhonnatanluiz@yahoo.com.br</strong></p>
-          <p id="sair">Sair</p>
-          <div class="input">
-            <input id="input" placeholder="pesquisa do OrkutFólio">
-            <a id="input-link" target="_blank" href="http://google.com.br/"><img class="lupa" src="images/lupa.png"/></a>
-        </div>
-     
+  <body class="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen">
+    <!-- Modern Navbar -->
+    <header class="sticky top-0 z-50 shadow-lg">
+      <nav class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16">
+            
+            <!-- Left Section -->
+            <div class="flex items-center space-x-6">
+              <div class="bg-white/95 backdrop-blur-sm rounded-lg px-3 py-1.5 shadow-md hover:shadow-xl transition-all transform hover:scale-105">
+                <img class="h-8" src="images/orkut-logo.png" alt="Orkut Logo"/>
+              </div>
+              <a href="#" class="flex items-center gap-2 text-white font-semibold hover:text-blue-200 transition-colors text-sm md:text-base">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+                </svg>
+                <span>Início</span>
+              </a>
+              <a href="mailto:jhonnatanluiz@yahoo.com.br" class="flex items-center gap-2 text-white font-semibold hover:text-pink-200 transition-colors text-sm md:text-base hidden md:flex">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                </svg>
+                <span>Página de recados</span>
+              </a>
+            </div>
+            
+            <!-- Right Section -->
+            <div class="flex items-center space-x-4">
+              <span class="text-blue-100 font-medium hidden lg:block text-sm">jhonnatanluiz@yahoo.com.br</span>
+              <button id="sair" class="px-4 py-2 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-lg border-2 border-white/30 hover:bg-white/30 transform hover:scale-105 transition-all text-sm">
+                Sair
+              </button>
+              <div class="relative">
+                <input 
+                  id="input" 
+                  placeholder="pesquisa do OrkutFólio" 
+                  class="w-48 md:w-64 px-4 py-2 pr-10 rounded-full bg-white/20 backdrop-blur-sm text-white placeholder-white/70 border-2 border-white/30 focus:outline-none focus:border-white/50 focus:bg-white/30 transition-all text-sm"
+                />
+                <a id="input-link" target="_blank" href="http://google.com.br/" class="absolute right-3 top-1/2 -translate-y-1/2 hover:scale-110 transition-transform">
+                  <svg class="w-5 h-5 text-white opacity-80 hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
-    <main>
-
-      <!-------- PROFILE ----------->
-      <!-- Profile section: Displays user profile picture, name, and tags -->
-
-      <section class="profile">
-        <img src="images/photo_2025-06-05_13-55-07.jpg" />
-        <p class="blue">Jhonnatan Luiz</p>
-
-        <small>ele/dele, Em busca de um emprego, Mogi das Cruzes. Brasil</small>
-        <hr />
-        <a target="_blank" href="https://www.linkedin.com/in/jhonnatanluiz/"> <p class="blue">🙍 + amigo</p></a>
-        <a target="_blank" href="https://github.com/JhonnatanLuiz"><p class="blue">mais ›</p></a>
-        <hr />
-        <div class="profile-tags">
-          <p>🙍 perfil</p>
-          <a href="mailto:jhonnatanluiz@yahoo.com.br"><p>📝 recados</p></a>
-          <p id="profile-fotos">📷 fotos</p>
-          <p id="profile-videos">📹 videos</p>
-          <p id="profile-depo">🌞 depoimentos</p>
-        </div>
-      </section>
-
-      <!------------- ABOUT --------------->
-      <!-- About section: Contains user details like relationship, birthday, skills, etc. -->
-
-      <section class="about">
-        <h3>Jhonnatan Luiz</h3>
-        <hr />
-        <div class="about-items">
-          <a href="mailto:jhonnatanluiz@yahoo.com.br">
-               <div id="recados" class="items">
-            <p><small>recados</small></p>
-            <p>📝 0</p>
-          </a>
-        </div>
-        <div id="aboutFotos" class="items">
-          <p><small>fotos</small></p>
-          <p>📷 0</p>
-      </div>
-      <div id="aboutVideos" class="items">
-        <p><small>videos</small></p>
-        <p>📹 0</p>
-    </div>
-    <div id="fas" class="items">
-      <p><small>fãs</small></p>
-      <p id="stars">⭐ 0</p>
-  </div>
-  <div id="items">
-        <div class="items">
-            <p><small>confiável</small></p>
-            <p>🙂🙂🙂</p>
-        </div>
-        <div class="items">
-            <p><small>legal</small></p>
-            <p>🟦🟦🟦</p>
-        </div>
-        <div class="items">
-            <p><small>justo e paciente</small></p>
-            <p>💗💗💗</p>
-        </div>
-      </div>
-    </div>
-        <hr />
-        <p><strong>social</strong></p>
-        <hr class="darker" />
-        <div class="dark-light-info">
-          <div class="dark-blue">
-            <p class="grey">relacionamento:</p>
-            <p>em um relacionamento sério com o estudo</p>
-          </div>
-          <div class="light-blue">
-            <p class="grey">aniversário:</p>
-            <p>08 de Abril</p>
-          </div>
-          <div class="dark-blue">
-            <p class="grey">idade:</p>
-            <p><span class="line-through">23 anos</span> 39 anos</p>
-          </div>
-          <div class="light-blue">
-            <p class="grey">interesses:</p>
-            <p>vagas para front-end junior, entrevistas de emprego, carteira assinada e barões da pisadinha </p>
-          </div>
-          <div class="dark-blue">
-            <p class="grey">habilidades:</p>
-            <p>JavaScript, ReactJS, HTML, CSS, Python e Whey Protein</p>
-          </div>
-          <div class="light-blue">
-            <p class="grey">humor:</p>
-            <p>sim</p>
-          </div>
-          <div class="dark-blue">
-            <p class="grey">animais de estimação:</p>
-            <p>um cadelão chamado Thor</p>
-          </div>
-          <div class="light-blue">
-            <p class="grey">cidade natal:</p>
-            <p>São Paulo</p>
-          </div>
-          <div class="dark-blue">
-            <p class="grey">página web:</p>
-            <a target="_blank" href="https://www.linkedin.com/in/jhonnatanluiz/"
-              >linkedin.com/in/jhonnatanluiz</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <!-- Photos section: Placeholder for recent photos -->
-
-      <section class="fotos">
-        <h4><p id="fotos-seta" class="right">▼</p> fotos recentes dele <a href="#"> (0)</a></h4>
-        <hr>
-        <div>📷<a href="#"  id="ver-fotos">ver todas</a></div>
-      </section>
-
-      <!-- Videos section: Placeholder for recent videos -->
-
-      <section class="videos">
-        <h4><p id="videos-seta" class="right">▼</p> videos recentes dele <a href="#"> (0)</a></h4>
-        <hr>
-        <div>📹<a href="#"  id="ver-videos"> ver todos</a></div>
-      </section>
-
-      <!-- Testimonials section: Placeholder for user testimonials -->
-
-      <section class="depoimentos">
-        <h4><p id="depos-seta" class="right">▼</p> depoimentos dele <a href="#" id="count-depoimentos"> (0)</a></h4>
-        <hr>
-        <div class="section-content-toggleable" id="depoimentos-content">
-            <ul id="lista-depoimentos">
-                <!-- Depoimentos serão adicionados aqui pelo JS -->
-            </ul>
-            <button id="escrever-depoimento-btn" style="margin-top:10px;">Deixar um depoimento</button>
-        </div>
-        <div><a href="#" id="ver-depos">ver/escrever depoimentos</a></div> <!-- Seu botão atual pode acionar o toggle e a carga inicial -->
-    </section>
-
-      <!---------- PROJETOS ---------------->
-      <!-- Projects section: Displays a grid of user projects with links -->
-
-      <section class="projects">
-        <h4>projetos</h4>
-        <div class="the-projects">
-        <div class="project">
-          <img src="images/unnamed.webp" />
-          <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-rede-social-johnny-bravo.git"><p>Rede social do Johnny Bravo</p></a>
-        </div>
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
-        <div class="project">
-          <img src="images/Jogo-da-Memoria-1.webp" />
-          <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-jogo-da-memoria"><p>Jogo da memória</p></a>
-        </div>
-        <div class="project">
-          <img src="images/71phF79EFpL.jpg" />
-          <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-calculadora"><p>Calculadora</p></a>
-        </div>
-        <div class="project">
-            <img src="images/e-commerce-e1487081160543.jpg" />
-            <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-e-commerce"><p>E-Commerce ☜═㋡ᔭ</p></a>
-          </div>
-          <div class="project">
-            <img src="images/quiz.png" />
-            <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-quiz"><p>Quiz</p></a>
-          </div>
-          <div class="project">
-            <img src="images/FocusArea__Weather-02.jpg" />
-            <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-weather-app"><p>Weather</p></a>
-   </div>
-   <a class="ver-todos" target="_blank" href="https://github.com/JhonnatanLuiz"><p>ver todos</p></a>
+        <!-- Left Sidebar - Profile -->
+        <aside class="lg:col-span-3">
+          <section class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100 hover:shadow-2xl transition-all">
+            <div class="relative group">
+              <img 
+                src="images/photo_2025-06-05_13-55-07.jpg" 
+                alt="Jhonnatan Luiz" 
+                class="w-full rounded-xl shadow-md grayscale hover:grayscale-0 transition-all duration-300 transform group-hover:scale-105"
+              />
+              <div class="absolute inset-0 rounded-xl bg-gradient-to-t from-purple-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            </div>
+            
+            <h2 class="text-xl font-bold text-blue-800 mt-4 mb-1">Jhonnatan Luiz</h2>
+            <p class="text-sm text-gray-600 mb-4">ele/dele, Em busca de um emprego, Mogi das Cruzes. Brasil</p>
+            
+            <hr class="border-purple-200 my-3" />
+            
+            <a target="_blank" href="https://www.linkedin.com/in/jhonnatanluiz/" class="block">
+              <p class="flex items-center gap-2 text-blue-600 hover:text-purple-600 font-semibold mb-2 transition-colors cursor-pointer">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path>
+                </svg>
+                <span>+ amigo</span>
+              </p>
+            </a>
+            <a target="_blank" href="https://github.com/JhonnatanLuiz" class="block">
+              <p class="text-blue-600 hover:text-purple-600 font-semibold mb-2 transition-colors cursor-pointer">mais ›</p>
+            </a>
+            
+            <hr class="border-purple-200 my-3" />
+            
+            <div class="space-y-2">
+              <div class="flex items-center space-x-2 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer">
+                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">perfil</span>
+              </div>
+              <a href="mailto:jhonnatanluiz@yahoo.com.br" class="block">
+                <div class="flex items-center space-x-2 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer">
+                  <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path>
+                    <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">recados</span>
+                </div>
+              </a>
+              <div id="profile-fotos" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer">
+                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-gray-700">fotos</span>
+              </div>
+              <div id="profile-videos" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer">
+                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
+                </svg>
+                <span class="text-gray-700">videos</span>
+              </div>
+              <div id="profile-depo" class="flex items-center space-x-2 p-2 rounded-lg hover:bg-purple-50 transition-colors cursor-pointer">
+                <svg class="w-5 h-5 text-gray-600" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                </svg>
+                <span class="text-gray-700">depoimentos</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+
+        <!-- Center Column - About Section -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- Stats Cards -->
+          <section class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Jhonnatan Luiz</h3>
+            <hr class="border-purple-200 mb-4" />
+            
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <a href="mailto:jhonnatanluiz@yahoo.com.br" class="block">
+                <div id="recados" class="bg-gradient-to-br from-blue-50 to-purple-50 p-4 rounded-xl hover:shadow-lg transition-all transform hover:scale-105 cursor-pointer border border-blue-100">
+                  <p class="text-xs text-gray-600 mb-1">recados</p>
+                  <p class="text-2xl font-bold text-blue-600">📝 0</p>
+                </div>
+              </a>
+              
+              <div id="aboutFotos" class="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-xl hover:shadow-lg transition-all transform hover:scale-105 cursor-pointer border border-purple-100">
+                <p class="text-xs text-gray-600 mb-1">fotos</p>
+                <p class="text-2xl font-bold text-purple-600">📷 0</p>
+              </div>
+              
+              <div id="aboutVideos" class="bg-gradient-to-br from-pink-50 to-red-50 p-4 rounded-xl hover:shadow-lg transition-all transform hover:scale-105 cursor-pointer border border-pink-100">
+                <p class="text-xs text-gray-600 mb-1">videos</p>
+                <p class="text-2xl font-bold text-pink-600">📹 0</p>
+              </div>
+              
+              <div id="fas" class="bg-gradient-to-br from-yellow-50 to-orange-50 p-4 rounded-xl hover:shadow-lg transition-all transform hover:scale-105 cursor-pointer border border-yellow-100">
+                <p class="text-xs text-gray-600 mb-1">fãs</p>
+                <p id="stars" class="text-2xl font-bold text-orange-600">⭐ 0</p>
+              </div>
+            </div>
+            
+            <!-- Rating Cards -->
+            <div id="items" class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-6 relative">
+              <div class="bg-blue-50 p-3 rounded-lg text-center border border-blue-200 hover:shadow-md transition-all">
+                <p class="text-xs text-gray-600 mb-2">confiável</p>
+                <p class="text-xl">🙂🙂🙂</p>
+              </div>
+              <div class="bg-purple-50 p-3 rounded-lg text-center border border-purple-200 hover:shadow-md transition-all">
+                <p class="text-xs text-gray-600 mb-2">legal</p>
+                <p class="text-xl">🟦🟦🟦</p>
+              </div>
+              <div class="bg-pink-50 p-3 rounded-lg text-center border border-pink-200 hover:shadow-md transition-all">
+                <p class="text-xs text-gray-600 mb-2">justo e paciente</p>
+                <p class="text-xl">💗💗💗</p>
+              </div>
+            </div>
+            
+            <hr class="border-purple-200 my-4" />
+            
+            <!-- Social Badge -->
+            <div class="inline-block">
+              <span class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full text-sm shadow-md">
+                social
+              </span>
+            </div>
+            
+            <hr class="border-gray-300 my-4" />
+            
+            <!-- Info List -->
+            <div class="space-y-1">
+              <div class="flex items-start py-3 px-4 bg-blue-50/50 rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">relacionamento:</p>
+                <p class="text-gray-800 text-sm">em um relacionamento sério com o estudo</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-white rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">aniversário:</p>
+                <p class="text-gray-800 text-sm">08 de Abril</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-blue-50/50 rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">idade:</p>
+                <p class="text-gray-800 text-sm"><span class="line-through">23 anos</span> 39 anos</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-white rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">interesses:</p>
+                <p class="text-gray-800 text-sm">vagas para front-end junior, entrevistas de emprego, carteira assinada e barões da pisadinha</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-blue-50/50 rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">habilidades:</p>
+                <p class="text-gray-800 text-sm">JavaScript, ReactJS, HTML, CSS, Python e Whey Protein</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-white rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">humor:</p>
+                <p class="text-gray-800 text-sm">sim</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-blue-50/50 rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">animais de estimação:</p>
+                <p class="text-gray-800 text-sm">um cadelão chamado Thor</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-white rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">cidade natal:</p>
+                <p class="text-gray-800 text-sm">São Paulo</p>
+              </div>
+              
+              <div class="flex items-start py-3 px-4 bg-blue-50/50 rounded-lg">
+                <p class="text-gray-600 font-semibold min-w-[140px] text-sm">página web:</p>
+                <a target="_blank" href="https://www.linkedin.com/in/jhonnatanluiz/" class="text-blue-600 hover:text-purple-600 font-semibold transition-colors text-sm">
+                  linkedin.com/in/jhonnatanluiz
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- Photos Section -->
+          <section class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                <span id="fotos-seta" class="cursor-pointer transform -rotate-90 transition-transform text-purple-600">▼</span>
+                fotos recentes dele
+                <a href="#" class="text-blue-600 hover:text-purple-600 transition-colors">(0)</a>
+              </h4>
+            </div>
+            <hr class="border-purple-200 mb-4" />
+            <div class="flex items-center justify-end gap-2 text-gray-600">
+              <span class="text-2xl">📷</span>
+              <a href="#" id="ver-fotos" class="text-blue-600 hover:text-purple-600 font-semibold transition-colors">ver todas</a>
+            </div>
+          </section>
+
+          <!-- Videos Section -->
+          <section class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                <span id="videos-seta" class="cursor-pointer transform -rotate-90 transition-transform text-purple-600">▼</span>
+                videos recentes dele
+                <a href="#" class="text-blue-600 hover:text-purple-600 transition-colors">(0)</a>
+              </h4>
+            </div>
+            <hr class="border-purple-200 mb-4" />
+            <div class="flex items-center justify-end gap-2 text-gray-600">
+              <span class="text-2xl">📹</span>
+              <a href="#" id="ver-videos" class="text-blue-600 hover:text-purple-600 font-semibold transition-colors">ver todos</a>
+            </div>
+          </section>
+
+          <!-- Testimonials Section -->
+          <section class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100">
+            <div class="flex items-center justify-between mb-4">
+              <h4 class="text-lg font-bold text-gray-800 flex items-center gap-2">
+                <span id="depos-seta" class="cursor-pointer transform -rotate-90 transition-transform text-purple-600">▼</span>
+                depoimentos dele
+                <a href="#" id="count-depoimentos" class="text-blue-600 hover:text-purple-600 transition-colors">(0)</a>
+              </h4>
+            </div>
+            <hr class="border-purple-200 mb-4" />
+            <div class="section-content-toggleable" id="depoimentos-content">
+              <ul id="lista-depoimentos" class="space-y-3 mb-4">
+                <!-- Depoimentos serão adicionados aqui pelo JS -->
+              </ul>
+              <button id="escrever-depoimento-btn" class="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-lg hover:opacity-90 transform hover:scale-105 transition-all shadow-md">
+                ✍️ Deixar um depoimento
+              </button>
+            </div>
+            <div class="flex justify-end">
+              <a href="#" id="ver-depos" class="text-blue-600 hover:text-purple-600 font-semibold transition-colors">ver/escrever depoimentos</a>
+            </div>
+          </section>
         </div>
 
-        <!----------------- COMUNIDADES ---------------->
-        <!-- Communities section: Displays a grid of user communities with links -->
+        <!-- Right Sidebar - Projects & Communities -->
+        <aside class="lg:col-span-3 space-y-6">
+          
+          <!-- Projects Section -->
+          <section class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100">
+            <h4 class="text-xl font-bold text-gray-800 mb-4">🚀 projetos</h4>
+            
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-rede-social-johnny-bravo.git" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/unnamed.webp" alt="Johnny Bravo" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors">Rede social do Johnny Bravo</p>
+                </div>
+              </a>
+              
+              <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-jogo-da-memoria" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/Jogo-da-Memoria-1.webp" alt="Jogo da Memória" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors">Jogo da memória</p>
+                </div>
+              </a>
+              
+              <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-calculadora" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/71phF79EFpL.jpg" alt="Calculadora" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors">Calculadora</p>
+                </div>
+              </a>
+              
+              <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-e-commerce" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/e-commerce-e1487081160543.jpg" alt="E-Commerce" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors">E-Commerce ☜═㋡ᔭ</p>
+                </div>
+              </a>
+              
+              <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-quiz" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/quiz.png" alt="Quiz" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors">Quiz</p>
+                </div>
+              </a>
+              
+              <a target="_blank" href="https://github.com/JhonnatanLuiz/Projeto-weather-app" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/FocusArea__Weather-02.jpg" alt="Weather App" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors">Weather</p>
+                </div>
+              </a>
+            </div>
+            
+            <a target="_blank" href="https://github.com/JhonnatanLuiz" class="block text-center">
+              <p class="text-blue-600 hover:text-purple-600 font-bold transition-colors">ver todos →</p>
+            </a>
+          </section>
 
-      </section>
-      <section class="communities">
-        <h4>comunidades</h4>
-         <div class="the-communities">
-          <div class="community">
-            <img src="images/internet.jpg" />
-            <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>Eu já entrei na internet</p></a>
-          </div>
-          <div class="community">
-            <img src="images/forninho.jpg" />
-            <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>O universo é um grande forninho</p></a>
-          </div>
-     <div class="community">
-      <img src="images/metido.jpg" />
-      <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>Pareço metido(a) mas sou legal</p></a>
-    </div>
-    <a class="ver-mais" target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades"><p>ver mais</p></a>
-  
-     </div> 
-      </section>
+          <!-- Communities Section -->
+          <section class="bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl p-6 border border-purple-100">
+            <h4 class="text-xl font-bold text-gray-800 mb-4">👥 comunidades</h4>
+            
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/internet.jpg" alt="Internet" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors min-h-[3rem] flex items-center justify-center">Eu já entrei na internet</p>
+                </div>
+              </a>
+              
+              <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades" class="group">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/forninho.jpg" alt="Forninho" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors min-h-[3rem] flex items-center justify-center">O universo é um grande forninho</p>
+                </div>
+              </a>
+              
+              <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades" class="group col-span-2">
+                <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:scale-105 transition-all border border-purple-100">
+                  <img src="images/metido.jpg" alt="Metido" class="w-full h-32 object-cover group-hover:opacity-90 transition-opacity" />
+                  <p class="text-xs text-center p-2 text-blue-600 group-hover:text-purple-600 font-semibold transition-colors">Pareço metido(a) mas sou legal</p>
+                </div>
+              </a>
+            </div>
+            
+            <a target="_blank" href="https://www.metropoles.com/sai-do-serio/so-rindo/relembre-50-comunidades-do-orkut-que-vao-deixar-saudades" class="block text-center">
+              <p class="text-blue-600 hover:text-purple-600 font-bold transition-colors">ver mais →</p>
+            </a>
+          </section>
+        </aside>
+      </div>
     </main>
 
-    <!------------------ LEGENDAS --------------------->
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white py-8 mt-12">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex flex-col items-center justify-center space-y-3">
+          <div class="flex items-center gap-2 text-xl font-bold">
+            <span class="text-2xl">🔷</span>
+            <span>OrkutFólio</span>
+          </div>
+          <div class="flex items-center gap-2 text-sm md:text-base">
+            <span>feito com</span>
+            <span class="text-red-400 text-2xl animate-pulse">❤️</span>
+            <span>e</span>
+            <span class="font-bold bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">Tailwind CSS</span>
+          </div>
+          <div class="flex items-center gap-4 mt-2 text-xs text-white/80">
+            <a href="https://github.com/JhonnatanLuiz" target="_blank" class="hover:text-white transition-colors">
+              GitHub
+            </a>
+            <span>•</span>
+            <a href="https://www.linkedin.com/in/jhonnatanluiz/" target="_blank" class="hover:text-white transition-colors">
+              LinkedIn
+            </a>
+            <span>•</span>
+            <span>© 2025</span>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-    <div id="legendaID" class="legenda-none">
-      <div class="inner">
-      <h5>legenda</h5>
-      <div>
-        <p>⭐ sou fã</p>
-      </div>
-      <div>
-        <p>🙂⚪⚪ confiável</p>
-        <p>🙂🙂⚪ muito confiável</p>
-        <p>🙂🙂🙂 super confiável</p>
-      </div>
-      <div>
-        <p>🟦⬜⬜ legal</p>
-        <p>🟦🟦⬜ muito legal</p>
-        <p>🟦🟦🟦 super legal</p>
-      </div>
-      <div>
-        <p>💗🤍🤍 justo e paciente</p>
-        <p>💗💗🤍 muito justo e paciente</p>
-        <p>💗💗💗 super justo e paciente</p>
+    <!-- Legend Tooltip -->
+    <div id="legendaID" class="legenda-none fixed bottom-0 right-32 z-50">
+      <div class="bg-gradient-to-br from-blue-100 to-purple-100 border-4 border-white rounded-t-2xl shadow-2xl p-4 w-80">
+        <h5 class="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-2 rounded-lg font-bold mb-3">
+          legenda
+        </h5>
+        <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 space-y-3">
+          <div class="p-2 bg-yellow-50 rounded-lg border border-yellow-200">
+            <p class="text-sm font-semibold">⭐ sou fã</p>
+          </div>
+          <div class="p-2 bg-blue-50 rounded-lg border border-blue-200 space-y-1">
+            <p class="text-xs">🙂⚪⚪ confiável</p>
+            <p class="text-xs">🙂🙂⚪ muito confiável</p>
+            <p class="text-xs">🙂🙂🙂 super confiável</p>
+          </div>
+          <div class="p-2 bg-purple-50 rounded-lg border border-purple-200 space-y-1">
+            <p class="text-xs">🟦⬜⬜ legal</p>
+            <p class="text-xs">🟦🟦⬜ muito legal</p>
+            <p class="text-xs">🟦🟦🟦 super legal</p>
+          </div>
+          <div class="p-2 bg-pink-50 rounded-lg border border-pink-200 space-y-1">
+            <p class="text-xs">💗🤍🤍 justo e paciente</p>
+            <p class="text-xs">💗💗🤍 muito justo e paciente</p>
+            <p class="text-xs">💗💗💗 super justo e paciente</p>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
 
-    <!------------- POPUPS -------------->
-    <!-- Popups: Contains popup messages for photos, videos, testimonials, and logout -->
+    <!-- Modern Popups -->
+    <div class="fotos-popup hidden" id="fotosPopup">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+        <div class="bg-gradient-to-br from-blue-100 to-purple-100 p-10 rounded-2xl shadow-2xl border-4 border-white transform animate-bounce">
+          <p class="text-xl font-bold text-gray-800 text-center">📷 Nenhuma foto disponível.</p>
+        </div>
+      </div>
+    </div>
     
-    <div class="fotos-popup" id="fotosPopup">
-      <p>Nenhuma foto disponível.</p>
+    <div class="videos-popup hidden" id="videosPopup">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+        <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-10 rounded-2xl shadow-2xl border-4 border-white transform animate-bounce">
+          <p class="text-xl font-bold text-gray-800 text-center">📹 Nenhum video disponível.</p>
+        </div>
+      </div>
     </div>
-    <div class="videos-popup" id="videosPopup">
-      <p>Nenhum video disponível.</p>
+    
+    <div class="depo-popup hidden" id="depoPopup">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+        <div class="bg-gradient-to-br from-pink-100 to-red-100 p-10 rounded-2xl shadow-2xl border-4 border-white transform animate-bounce">
+          <p class="text-xl font-bold text-gray-800 text-center">😔 Nenhum depoimento por aqui</p>
+        </div>
+      </div>
     </div>
-    <div class="depo-popup" id="depoPopup">
-      <p>Nenhum depoimento por aqui 😔</p>
-    </div>
-    <div class="bolo-popup" id="boloPopup">
-      <p>Fica, vai ter bolo 🎂</p>
+    
+    <div class="bolo-popup hidden" id="boloPopup">
+      <div class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+        <div class="bg-gradient-to-br from-yellow-100 to-orange-100 p-10 rounded-2xl shadow-2xl border-4 border-white transform animate-bounce">
+          <p class="text-2xl font-bold text-gray-800 text-center">🎂 Fica, vai ter bolo</p>
+        </div>
+      </div>
     </div>
     <script type="text/javascript" src="./index.js"></script>
   </body>
